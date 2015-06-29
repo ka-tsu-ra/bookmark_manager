@@ -15,8 +15,7 @@ class BManager < Sinatra::Base
 
   post '/links' do
     Link.create(url: params[:url], title: params[:title])
-    @links = Link.all
-    erb :'links/index'
+    redirect '/links'
   end
 
 
